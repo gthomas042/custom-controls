@@ -20,8 +20,8 @@ export class TextareaComponent {
     @Input() value: string | undefined;
     @Input() rows: number = 5;
     @Input() cols: number = 30;
-    @Input() name!: string;
     @Input() id: string = `cc-textarea-${crypto.randomUUID()}`
+    @Input() name: string = `${this.id}-name`;    
     @Input() autoResize: boolean = false;
     @Input() pKeyFilter: "int" | "num" | "money" | "hex" | "alpha" | "alphanum" | RegExp = "alphanum";
     @Input() placeholder?: string = '';

@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { TextareaComponent } from './custom-controls/text-area/textarea.component';
+import { createCustomElement } from '@angular/elements';
 
 @NgModule({
     declarations: [
@@ -14,6 +15,15 @@ import { TextareaComponent } from './custom-controls/text-area/textarea.componen
     providers: [
 
     ],
-    bootstrap: [AppComponent]
+    //bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+    constructor(private injector: Injector){}
+
+    ngDoBootstrap() {
+        const webComponentPrefix = "rtg";
+        
+        const element = createCustomElement(TextareaComponent, { injector: this.injector });
+        customElements.define(`${webComponentPrefix}-wc-textarea`, element);
+    }
+}

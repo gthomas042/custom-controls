@@ -7,6 +7,8 @@ import { PrimeNGConfig } from 'primeng/api';
 })
 export class AppComponent implements OnInit {
 
+    textAreaValue: string | undefined;
+
     constructor(private primengConfig: PrimeNGConfig) { }
 
     ngOnInit() {

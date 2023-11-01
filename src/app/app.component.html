@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+<h1>Hello World</h1>
+<div class="grid p-fluid ml-1">
+    <div class="col-12 md:col-3">
+        <div class="card">
+            <app-textarea
+                id="summary_id"
+                name="summary_name"
+                label="Summary"
+                [value]="textAreaValue"
+                (input)="textAreaValue = $event.target.value"></app-textarea>
+                <p>Text Area Value -> {{ textAreaValue }}</p>
+        </div>
+    </div>
+</div>

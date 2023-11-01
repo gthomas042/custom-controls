@@ -1,0 +1,15 @@
+<!-- <p>Angular Text Area Control here...</p> -->
+
+<span class="p-float-label">
+    <textarea        
+        [id]="id"
+        [name]="name"
+        [rows]="rows" 
+        [cols]="cols" 
+        pInputTextarea    
+        [(ngModel)]="value"
+        [autoResize]="autoResize"
+        [pKeyFilter]="pKeyFilter"
+        [placeholder]="placeholder"></textarea>
+    <label [for]="id">{{ label }}</label>
+</span>
